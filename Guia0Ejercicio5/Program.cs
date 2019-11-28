@@ -12,17 +12,13 @@ namespace Guia0Consola3
 		{
 			ConsoleKeyInfo tecla;
 			Console.TreatControlCAsInput = true;
-			Console.WriteLine("Ingrese CTRL + F para cortar");
+			Console.WriteLine("Ingrese F para cortar");
 			do
 			{
-
 				tecla = Console.ReadKey();
-				if ((tecla.Modifiers & ConsoleModifiers.Control) != 0) Console.Write(" CTL+");
 				Console.Write(" fue la tecla que apretaste ");
-
 				Console.Out.WriteLine("");
-			} while (tecla.Key != ConsoleKey.F || tecla.Modifiers != ConsoleModifiers.Control);
-			Console.Out.WriteLine("Salio bien");
+			} while (tecla.Key != ConsoleKey.F);
 			Console.ReadKey();
 		}
 	}

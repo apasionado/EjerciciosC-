@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C94099FF-670F-4374-82C5-868988BAF73B}</ProjectGuid>
+    <ProjectGuid>{635E8E1F-F1F9-4959-A6A7-62AE3FF44D3D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Guia0Consola3</RootNamespace>
-    <AssemblyName>Guia0Consola3</AssemblyName>
+    <RootNamespace>Guia0Ejercicio5</RootNamespace>
+    <AssemblyName>Guia0Ejercicio5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Guia0Ejercicio5\Program.cs">
-      <Link>Program.cs</Link>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
