@@ -10,8 +10,9 @@ namespace guia0
     {
         static void Main(string[] args)
         {
-            Console.Out.WriteLine("TU vieja");
-            Console.In.ReadLine();
+            var ingreso = Console.In.ReadLine();
+            Console.Out.WriteLine("Usted ingreso al sistema: " + ingreso);
+            Console.ReadKey();
         }
     }
 }
