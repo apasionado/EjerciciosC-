@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Guia0Cadenas1
@@ -10,9 +11,17 @@ namespace Guia0Cadenas1
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Ingrese nombre");
-			var nombre = Console.In.ReadLine();
-			Console.WriteLine("Hola " + nombre);
+			Console.WriteLine("Ingrese una frase que tenga \"Fin\" ");
+			var frase = Console.In.ReadLine();
+			if (frase.Contains("fin"))
+			{
+				Console.WriteLine("Tiene \"Fin\" ");
+			}
+			else
+			{
+				Console.WriteLine("No contiene \"Fin\" ");
+			}
+
 			Console.ReadKey();
 		}
 	}
