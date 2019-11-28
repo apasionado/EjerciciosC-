@@ -10,8 +10,10 @@ namespace guia0
     {
         static void Main(string[] args)
         {
-            var ingreso = Console.In.ReadLine();
-            Console.Out.WriteLine("Usted ingreso al sistema: " + ingreso);
+            /*3.	Lea las teclas presionadas y finalice al presionar la tecla “X”.*/
+            
+            var ingreso = Console.ReadKey();
+            Console.Out.WriteLine("Usted ingreso al sistema: " + ingreso.Key.ToString());
             Console.ReadKey();
         }
     }
