@@ -10,7 +10,11 @@ namespace Guia0Cadenas4
 	{
 		static void Main(string[] args)
 		{
-
+			Console.WriteLine("Ingrese algo");
+			var algo = Console.ReadLine();
+			algo = algo.ToLower();
+			Console.Write("Ahora está en minusculas: " + algo);
+			Console.ReadKey();
 		}
 	}
 }
