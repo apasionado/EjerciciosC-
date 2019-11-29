@@ -33,8 +33,8 @@ namespace Guia0Numericos3
 					num2 = Convert.ToDouble(res2);
 					sonNumeros = true;
 
-					Console.WriteLine(res1, res2, "res");
-					Console.WriteLine(num1.ToString(), num2.ToString(), "Num");
+					Console.WriteLine("res 1: " + res1 + " res 2: " + res2 + " res");
+					Console.WriteLine("num 1: " + num1.ToString() + " num 2: " + num2.ToString() + " num");
 				}
 				else
 				{
@@ -49,6 +49,7 @@ namespace Guia0Numericos3
 
 		static bool Operaciones(double num1, double num2)
 		{
+
 			var suma = num1 + num2;
 			var resta = num1 - num2;
 			var multiplicar = num1 * num2;
@@ -56,13 +57,13 @@ namespace Guia0Numericos3
 			var resto = num1 % num2;
 			int res1 = Convert.ToInt32(num1);
 			int res2 = Convert.ToInt32(num2);
-			int potencia = res1 ^ res2;
-			Console.WriteLine("Suma: ", suma);
-			Console.WriteLine("Resta: ", resta);
-			Console.WriteLine("Multiplicar: ", multiplicar);
-			Console.WriteLine("Dividir: ", dividir);
-			Console.WriteLine("Resto: ", resto);
-			Console.WriteLine("Potencia: ", potencia);
+			var potencia = Math.Pow(num1, num2);
+			Console.WriteLine("Suma: " + suma);
+			Console.WriteLine("Resta: " + resta);
+			Console.WriteLine("Multiplicar: " + multiplicar);
+			Console.WriteLine("Dividir: " + dividir);
+			Console.WriteLine("Resto: " + resto);
+			Console.WriteLine("Potencia: " + potencia);
 			Console.ReadKey();
 			return true;
 		}
