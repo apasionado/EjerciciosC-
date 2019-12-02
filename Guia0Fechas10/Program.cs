@@ -11,7 +11,7 @@ namespace Guia0Fechas10
 	{
 		static void Main(string[] args)
 		{
-			//Solicite el ingreso de una fecha al usuario y muestre sólo la hora.
+			//Solicite el ingreso de una fecha al usuario y muestre sólo la hora. NO LOGRO CONSEGUIR QUE AGARRE LA HORA
 			bool exito = false;
 			while (exito != true)
 			{
