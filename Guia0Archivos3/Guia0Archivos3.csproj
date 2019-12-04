@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE64D54C-A274-4E20-9069-DEDDF01E4D8D}</ProjectGuid>
+    <ProjectGuid>{BC4A737F-52CE-44BA-8C96-9048EFA6328F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Guia0ColasFilas1</RootNamespace>
-    <AssemblyName>Guia0ColasFilas1</AssemblyName>
+    <RootNamespace>Guia0Archivos3</RootNamespace>
+    <AssemblyName>Guia0Archivos3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
