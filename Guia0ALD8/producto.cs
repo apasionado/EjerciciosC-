@@ -4,7 +4,7 @@
     {
 
         public int codigoProducto { get; set; }
-        int precio;
+        public int precio { get; set; }
 
 
         public override string ToString()
