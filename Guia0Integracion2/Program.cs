@@ -57,41 +57,30 @@ namespace Guia0Integracion2
                         darAlumnoDeAlta(listaDeAlumnos);
                         break;
                     case "b":
-
                         darCursoDeAlta(cursos);
                         break;
                     case "c":
-
                         asignarAlumnoEnCurso(cursos);
                         break;
-
                     case "d":
-
                         desasignarAlumnoDeCurso(cursos);
-
-
                         break;
                     case "e":
                         mostrarListaDeAlumnosAsignados(cursos);
-
                         break;
                     case "f":
                         cursosDeAlumnoAsignado(cursos);
-
                         break;
                     case "g":
                         alumnosEnUnCurso(cursos);
-
                         break;
                     case "h":
                         cursosDeCadaAlumno(cursos, listaDeAlumnos);
                         break;
                     case "i":
-
                         terminar = true;
                         Console.WriteLine("chau chau");
                         Console.ReadKey();
-
                         break;
                     case "op":
                         Console.WriteLine("a.Dar de alta un alumno (Número de registro y nombre completo)" +
@@ -147,7 +136,8 @@ namespace Guia0Integracion2
             string numeroCurso = Console.ReadLine();
             verificarNumero(numeroCurso);
             //los cursos al ser creados aun no contienen alumnos, con null da nullpointer exception
-            cursos.Add(numeroCurso, null);
+            List<string> listaVacia = new List<string>();
+            cursos.Add(numeroCurso, listaVacia);
         }
 
         static void asignarAlumnoEnCurso(Dictionary<string, List<string>> cursos)
