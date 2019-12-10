@@ -27,81 +27,69 @@ namespace Guia0Integracion3
         
         …y presentará una lista de técnicos, indicando en qué zona trabajarán, 
         sus clientes asignados y la cantidad de solicitudes asignadas.
-    */
-
-            List<ListaDeTecnicos> listaDeTecnicos = new List<ListaDeTecnicos>();
-            bool terminar = false;
-
-
+        */
+            Tecnico[] tecnicos = new Tecnico[30];
             do
             {
-                Console.Clear();
-                Console.WriteLine("1.Crear un ticket nuevo aleatorio y asignarlo automaticamente");
-                Console.WriteLine("2.Crear ticket automaticamente y asignarlo automaticamente");
-                Console.WriteLine("2.Ver los tickets creados y a qué técnico pertenecen");
-                Console.WriteLine("3.Finalizar");
-                string opcion = Console.ReadLine();
-
-                switch (opcion)
+                ConsoleKeyInfo deseaContinuar;
+                do
                 {
-                    case "1":
-                        Tickets t;
-                        t = crearTicket();
-                        asignarTicketAutomaticamente(t);
-                        break;
-                    case "2":
-                        crearTicketAutomaticamente();
-                        asignarTicketAutomaticamente(ticket);
-                        break;
-                    case "3":
-                        verTickets();
-                        break;
-                    case "4":
-                        terminar = true;
-                        break;
-                    default:
-                        Console.WriteLine("Comando invalido");
-                        break;
+                    Console.WriteLine("¿Desea cargar otra solicitud de mantenimiento (S/N)?");
+                    deseaContinuar = Console.ReadKey();
+                    if (deseaContinuar.Key != ConsoleKey.N && deseaContinuar.Key != ConsoleKey.S)
+                    {
+                        Console.WriteLine("Ingrese S o N");
+                        continue;
+                    }
                 }
-            } while (!terminar);
+                while (false);
+
+                if (deseaContinuar.Key == ConsoleKey.N)
+                {
+                    break;
+                }
+
+                //pedir datos necesarios de la orden y hacer cuentas.
+
+                //zona
+                //cliente (buscarlo en lista)
+
+                var solicitud = new Solicitud(new Cliente("pepe", "lolo"));
+
+                bool aceptada = false;
+
+                //si hay un tecnico q tenga ese cliente => tiene prioridad.
+                if (tecnicos.FirstOrDefault(t => t.TieneCliente(solicitud.Cliente)) is Tecnico tecnicoMismoCliente)
+                {
+                    aceptada = tecnicoMismoCliente.AceptaSolicitud(solicitud);
+                }
+
+                if (!aceptada)
+                {
+                    foreach (var tecnico in tecnicos)
+                    {
+                        aceptada = tecnico.AceptaSolicitud(solicitud);
+                        if (aceptada)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                if (!aceptada)
+                {
+                    Console.WriteLine("No se puede asignar.");
+                }
+
+            } while (true);
+
+
+            //mostrar resultados
+
+
 
             Console.ReadKey();
 
         }
-
-        public static Tickets crearTicket()
-        {
-            Console.WriteLine("Ingrese una zona");
-            string zonaIngresada = Console.ReadLine();
-            Console.WriteLine("Ingrese un nombre de cliente o razon social");
-            string clienteIngresado = Console.ReadLine();
-
-            Tickets ticket = new Tickets(clienteIngresado, zonaIngresada);
-            return ticket;
-        }
-        public static List<ListaDeTecnicos> asignarTicketAutomaticamente(Tickets t, List<ListaDeTecnicos> lista)
-        {
-            /*a. * Puede haber más de una Solicitud del mismo cliente. 
-             * En este caso el sistema debe asignarlas al mismo técnico. 
-                b.	No pueden asignarse más de cuatro Solicitudes por día a cada técnico. 
-                c.	Todas las órdenes asignadas a un técnico deben ser dentro de una misma zona 
-                (varios técnicos pueden trabajar en la misma zona).*/
-
-            //Verificar si algun tecnico ya tiene el ticket (o el nombre del ticket)
-            //, o coincide la zona, o si ya excedió el limite de solicitudes
-            Console.WriteLine("Iniciando asignación automática");
-
-            foreach (var gestion in lista)
-            {
-                if (gestion.tecnicoOperativo.Contains())
-                    if (gestion.solicitudAsignada.Contains(t))
-                    {
-                        Console.WriteLine("Este ticket ya existe en la lista de tickets")
-                    }
-            }
-
-            return lista.Add(new ListaDeTecnicos { legajoDelTecnico = tecnicoOperador });
-        }
-        public static Tickets crearTicketAutomaticamente
     }
 }

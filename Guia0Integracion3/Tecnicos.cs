@@ -3,25 +3,39 @@ using System.Collections.Generic;
 
 namespace Guia0Integracion3
 {
-    internal class Tecnicos
+    internal class Tecnico
     {
-        public string legajo { get; set; }
-        public List<string> solicitudesPendientes { get; set; }
+        public string Zona { get; private set; }
+        public List<Cliente> Clientes { get; } = new List<Cliente>();
+        public int CantidadSolicitudes { get; private set; }
 
-        int limiteSolicitud { get; set; }
-
-        public Tecnicos(int totalDeTecnicos)
+        internal bool AceptaSolicitud(Solicitud solicitud)
         {
-            if (totalDeTecnicos < 30)
+            if (Zona != null && solicitud.Zona != Zona)
             {
-                this.legajo += 1;
-                this.limiteSolicitud = 4;
+                return false;
             }
-            else
+
+            if (CantidadSolicitudes == 4)
             {
-                Console.WriteLine("No ha sido posible crear el técnico, se ha llegado al limite de técnicos.");
+                return false;
             }
+
+            CantidadSolicitudes++;
+
+            if (!Clientes.Contains(solicitud.Cliente))
+            {
+                Clientes.Add(solicitud.Cliente);
+            }
+
+            if(Zona == null)
+            {
+                Zona = solicitud.Zona;
+            }
+
+            return true;
         }
 
+        internal bool TieneCliente(Cliente cliente) => Clientes.Contains(cliente);
     }
 }
